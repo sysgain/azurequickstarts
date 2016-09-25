@@ -201,7 +201,7 @@
         "encryption": {
           "services": {
             "blob": {
-              "enabled": "[parameters('blobStorageencryptionEnabled')]"
+              "enabled": "[variables('blobStorageencryptionEnabled')]"
             }
           },
           "keySource": "Microsoft.Storage"
