@@ -158,7 +158,10 @@
       }
     },
     "linuxConfiguration_password": {},
-    "linuxConfiguration": "[variables(concat('linuxConfiguration_', parameters('authenticationType')))]"
+    "linuxConfiguration": "[variables(concat('linuxConfiguration_', parameters('authenticationType')))]",
+    "blobStorageAccountType": "Standard_LRS",
+    "blobStorageaccessTier": "Hot",
+    "blobStorageencryptionEnabled": false
   },
   "resources": [
     {
@@ -181,6 +184,27 @@
           "location": {
             "value": "[variables('location')]"
           }
+        }
+      }
+    },
+    {
+      "apiVersion": "2016-01-01",
+      "name": "storageaccountResourceDtr",
+      "location": "[variables('location')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "sku": {
+        "name": "[variables('blobStorageAccountType')]"
+      },
+      "kind": "BlobStorage",
+      "properties": {
+        "accessTier": "[variables('blobStorageaccessTier')]",
+        "encryption": {
+          "services": {
+            "blob": {
+              "enabled": "[parameters('blobStorageencryptionEnabled')]"
+            }
+          },
+          "keySource": "Microsoft.Storage"
         }
       }
     },
