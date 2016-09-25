@@ -1,5 +1,5 @@
 
-### Quickstart
+### Azure Quickstart : Continuous Integration and Delivery of microservices using Pivotal CloudFoundry - Concourse - Azure Service broker & Apigee 
 
 This repository folder contains an Azure Resource Manager template to deplpy
 
@@ -7,7 +7,8 @@ This repository folder contains an Azure Resource Manager template to deplpy
 - Pivotal CloudFoundry
  Concourse  https://github.com/concourse/concourse
 - Azure Service Meta broker https://github.com/Azure/meta-azure-service-broker
-- (Optional) Apigee Edge Gateway & Apigee Edge Service Broker https://github.com/apigee/pivotal-cf-apigee/tree/master/apigee-cf-service-broker 
+- (Optional) Apigee Edge Gateway & Apigee Edge Service Broker [USE DIFFERET IRL] 
+
 
 #### IMPORTANT: Before you deploy the template make sure you have accepted Pivotal End User License Agreement:
 
