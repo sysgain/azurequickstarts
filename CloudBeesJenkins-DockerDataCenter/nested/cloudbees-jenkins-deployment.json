@@ -192,7 +192,7 @@
     {
       "apiVersion": "2016-01-01",
       "name": "[variables('storageaccountResourceDtr')]",
-      "location": "[variables('location')]",
+      "location": "eastus2",
       "type": "Microsoft.Storage/storageAccounts",
       "sku": {
         "name": "[variables('blobStorageAccountType')]"
