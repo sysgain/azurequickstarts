@@ -1,7 +1,7 @@
 
-### Azure Quickstart : Continuous Integration and Delivery of microservices using Pivotal CloudFoundry - Concourse - Azure Service broker & Apigee 
+### Azure Partner Quickstart Template: Continuous Integration and Delivery of microservices using Pivotal CloudFoundry - Concourse - Azure Service Broker & Apigee 
 
-This repository folder contains an Azure Resource Manager template to deplpy
+This repository folder contains an Azure Resource Manager template to deploy:
 
 -  BOSH 
 - Pivotal CloudFoundry
@@ -29,8 +29,8 @@ https://network.pivotal.io/products/p-spring-cloud-services/releases/1735/eula
 
 
 
-- Clone this repository `$ git clone https://github.com/cf-platform-eng/bosh-azure-template`
-- Create an Azure deployment parameters file to go with the template itself, call it 'azure-deploy-parameters.json'. The file needs to look like this;
+- Clone this repository '**$ git clone https://github.com/cf-platform-eng/bosh-azure-template**'
+- Create an Azure deployment parameters file to go with the template itself, call it '**azure-deploy-parameters.json**'. The file needs to look like this;
 
 ```
 {
@@ -61,12 +61,12 @@ https://network.pivotal.io/products/p-spring-cloud-services/releases/1735/eula
 
 - Give each parameter a suitable value;
 
-    - storageAccountNamePrefixString - this is a unique prefix name for you Azure storage account.
-    - adminSSHKey - your rsa public key that will be trusted by the "jumpbox"
-    - tenantID - your tenant ID for the subscription you wish to use
-    - clientID - the client ID associated to the subscription
-    - clientSecret - the clients secret (password)
-    - pivnetAPIToken - all releases for BOSH are supported releases downloaded from Pivotal Network. Access to the network website is made available via the API token assigned to your account.
+    - **storageAccountNamePrefixString** - this is a unique prefix name for you Azure storage account.
+    - **adminSSHKey** - your rsa public key that will be trusted by the "jumpbox".
+    - **tenantID** - your tenant ID for the subscription you wish to use.
+    - **clientID** - the client ID associated to the subscription.
+    - **clientSecret** - the clients secret (password).
+    - **pivnetAPIToken** - all releases for BOSH are supported releases downloaded from Pivotal Network. Access to the network website is made available via the API token assigned to your account.
 
 
 - Once that file is complete, you can deploy it like this;
