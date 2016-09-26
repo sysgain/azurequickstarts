@@ -1,8 +1,8 @@
 # Video On-Demand with Wowza, Aspera, & Azure Media Services Azure Partner Quickstart Template
-<a href="" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsysgain%2Fazurequickstarts%2Fmaster%2FVOD-Aspera-Wowza-AzureMediaServices%2Fazuredeploy.json" target="_blank">
 <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fsysgain%2Fazurequickstarts%2Fmaster%2FVOD-Aspera-Wowza-AzureMediaServices%2Fazuredeploy.json" target="_blank">
 <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 ## Azure Partner Quickstart Template Overview
