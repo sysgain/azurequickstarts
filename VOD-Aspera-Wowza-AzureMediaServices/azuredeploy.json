@@ -59,7 +59,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/wowzaP2P/master/ams/ams.json",
+					"uri": "https://raw.githubusercontent.com/sysgain/VOD-Aspera-Wowza-AzureMediaServices/master/ams/ams.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -82,7 +82,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/wowzaP2P/master/ams/automationjob.json",
+					"uri": "https://raw.githubusercontent.com/sysgain/VOD-Aspera-Wowza-AzureMediaServices/master/ams/automationjob.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -134,7 +134,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/wowzaP2P/master/desktop/desktop.json",
+					"uri": "https://raw.githubusercontent.com/sysgain/VOD-Aspera-Wowza-AzureMediaServices/master/desktop/desktop.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -173,7 +173,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/wowzaP2P/master/aspera/aspera.json",
+					"uri": "https://raw.githubusercontent.com/sysgain/VOD-Aspera-Wowza-AzureMediaServices/master/aspera/aspera.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -199,7 +199,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/wowzaP2P/master/wowza/wowza.json",
+					"uri": "https://raw.githubusercontent.com/sysgain/VOD-Aspera-Wowza-AzureMediaServices/master/wowza/wowza.json",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
