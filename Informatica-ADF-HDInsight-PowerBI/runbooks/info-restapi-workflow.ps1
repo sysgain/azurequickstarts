@@ -116,9 +116,8 @@ param(
     Write-Output "The server url is "$serverUrl
     Write-Output "------------------------------------------------------"
     Write-Output "The auth token is "$authToken
-
-
-
+    
+    Start-Sleep -s 180
     
 
 
