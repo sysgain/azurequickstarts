@@ -135,7 +135,7 @@ param(
         serverUrl = "$serverUrl"
         csa_name = "$informatica_csa_vmname"
         storageAccountName = "$adfStorageAccName"
-        storageAccountKey = "$adfStorageAccKey"
+        storageAccountkey = "$adfStorageAccKey"
     }
 
     $workflowBodyJson = $workflowBody | ConvertTo-Json
