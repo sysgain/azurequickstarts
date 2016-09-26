@@ -303,7 +303,7 @@
         "clusterSize": 1,
         "timeToLive": "00:45:00",
         "frequency": "Hour",
-        "armBaseUrl": "https://raw.githubusercontent.com/sysgain/informatica-p2p/master",
+        "armBaseUrl": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/Informatica-ADF-HDInsight-PowerBI",
         "interval": 1,
         "writeBatchSize": 0,
         "writeBatchTimeout": "00:00:00",
