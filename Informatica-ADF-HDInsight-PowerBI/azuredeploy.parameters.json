@@ -1,0 +1,95 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "sqlDWDBAdminName": {
+            "value": "sqladmin"
+        },
+        "sqlDWAdminPassword": {
+            "value": "Sysgain@#123"
+        },
+        "jobId": {
+            "value": "ee49c573-8fbc-4a53-9d04-834fe4ddf40b"
+        },
+        "jobIdSignup": {
+            "value": "7c643900-af40-4243-8f44-85de8ceef11f"
+        },
+        "jobIdWorkflow": {
+            "value": "413c1df8-edf7-4522-affd-f23be937f487"
+        },
+        "jobIdCont": {
+            "value": "1fde571c-762d-4170-a9bd-7ee74cf0fd30"
+        },
+        "start": {
+            "value": "2016-09-26T09:00:00"
+        },
+        "end": {
+            "value": "2016-09-26T10:00:00"
+        },
+        "tag": {
+            "value": {
+                "value1": "Informatica"
+            }
+        },
+        "adminUsername_informatica_vm": {
+            "value": "vmuser"
+        },
+        "adminPassword_informatica_vm": {
+            "value": "Sysgain@#123"
+        },
+        "publicIPdnsPrefix": {
+            "value": "infodns"
+        },
+        "azure_Rm_Username": {
+            "value": "uday@sysgaininc.com"
+        },
+        "azure_Rm_Password": {
+            "value": "Sysgain@#"
+        },
+        "user_email": {
+            "value": "trevor12@gmail.com"
+        },
+        "informatica_user_name": {
+            "value": "trevor11@gmail.com"
+        },
+        "informatica_user_password": {
+            "value": "Sysgain@#"
+        },
+        "user_firstname": {
+            "value": "Trevor"
+        },
+        "user_lastname": {
+            "value": "Sebastian"
+        },
+        "user_title": {
+            "value": "Mr"
+        },
+        "user_phone": {
+            "value": "9000840469"
+        },
+        "org_name": {
+            "value": "Sysgain"
+        },
+        "org_address": {
+            "value": "MainSt"
+        },
+        "org_city": {
+            "value": "Seattle"
+        },
+        "org_state": {
+            "value": "NY"
+        },
+        "org_zipcode": {
+            "value": "98102"
+        },
+        "org_country": {
+            "value": "US"
+        },
+        "org_employees": {
+            "defaultValue": "5001_"
+        }
+    }
+}
