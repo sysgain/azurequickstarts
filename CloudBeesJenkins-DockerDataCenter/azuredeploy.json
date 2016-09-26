@@ -114,7 +114,7 @@
       "type": "string",
       "defaultValue": "https://dockerp2p.blob.core.windows.net/dockerp2p/Docker-Datacenter%20Subscription.lic",
       "metadata": {
-        "description": "License Key for UCP"
+        "description": "License Key for UCP (Url)"
       }
     },
     "ucpAdminPassword": {
@@ -135,7 +135,7 @@
   "variables": {
     "deploymentApiVersion": "2015-01-01",
     "networkApiVersion": "2015-06-15",
-    "storageAccountNameCloudbees": "cloubeestor",
+    "storageAccountNameCloudbees": "[concat('cbstor',variables('uniqueString'))]",
     "storageAccountType": "Standard_LRS",
     "virtualNetworkName": "MyVnet",
     "virtualNetworkAddressPrefix": "10.0.0.0/16",
