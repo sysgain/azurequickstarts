@@ -119,7 +119,7 @@ param(
 
 
 
-    Start-Sleep -s 300
+    
 
 
     #$workflowUrl = "https://138.91.243.84:10011/api/users/v1/components/informatica/workflow/ignitep2p"
