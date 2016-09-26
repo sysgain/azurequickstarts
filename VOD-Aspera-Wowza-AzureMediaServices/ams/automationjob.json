@@ -53,7 +53,7 @@
             }
         },
         "runbookUrl": {
-            "defaultValue": "https://raw.githubusercontent.com/sysgain/wowzaP2P/master/ams/MediaservicesRestapi1.ps1",
+            "defaultValue": "https://raw.githubusercontent.com/sysgain/VOD-Aspera-Wowza-AzureMediaServices/master/ams/MediaservicesRestapi1.ps1",
             "type": "string"
         },
         "tag": {
