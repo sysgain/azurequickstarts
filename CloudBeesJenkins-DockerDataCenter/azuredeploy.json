@@ -129,7 +129,7 @@
         "description": "Base URL for Artifacts",
         "artifactsBaseUrl": ""
       },
-      "defaultValue": "https://raw.githubusercontent.com/sysgain/cloudbeesJenkins-dockerDC/jenkins-new"
+      "defaultValue": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/CloudBeesJenkins-DockerDataCenter"
     }
   },
   "variables": {
