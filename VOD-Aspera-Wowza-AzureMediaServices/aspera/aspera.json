@@ -26,7 +26,7 @@
         "publicIpAddressName":"[concat(parameters('deploymentName'), 'publicIP')]",
         "vmExtensionName":"aspscript",
         "publicIPdnsPrefix":"[concat(parameters('deploymentName'), 'asperadns')]",
-        "scriptFilePath": "https://raw.githubusercontent.com/sysgain/wowzaP2P/master/aspera/configasp.sh",
+        "scriptFilePath": "https://raw.githubusercontent.com/sysgain/VOD-Aspera-Wowza-AzureMediaServices/master/aspera/configasp.sh",
         "executeCmd": "[concat('sh configasp.sh', ' ',parameters('asperaUsername'))]",
         "vnetId": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
