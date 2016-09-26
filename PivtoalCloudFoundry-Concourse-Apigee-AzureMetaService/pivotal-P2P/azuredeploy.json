@@ -185,7 +185,7 @@
 		"webSessionPassword": "[uniqueString(parameters('adminSSHKey'))]",
 		"installSize": "Small",
 		"vmSize": "Standard_D2_v2",
-		"baseUri": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/Pivotalp2pv2/pivotal-P2P/Apigee/",
+		"baseUri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/Apigee/",
 		"apigeeTemplateLink": "[concat(variables('baseUri'),parameters('apigeeEdge'),'.json')]",
 		"pcfTemplateLink": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/Pivotalp2pv2/azuredeploy.json",
 		"managementPublicIPDNSName": "[concat(parameters('apigeeDeploymentName'), uniqueString(resourceGroup().id, deployment().name), '-management')]",
@@ -202,7 +202,7 @@
 		"publicIPDNSName": "[concat(parameters('apigeeDeploymentName'), '-management')]",
 		"sshKey": "[parameters('adminSSHKey')]",
 		"sshPrivateKey": " ",
-		"templateLocation": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/Pivotalp2pv2/pivotal-P2P/Apigee",
+		"templateLocation": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/Apigee",
 		"tshirtSize": "XSmall"
 
 
