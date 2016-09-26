@@ -6,10 +6,6 @@ param(
 
         [Parameter(Mandatory=$true)]
         [string]
-        $credentialName,
-
-        [Parameter(Mandatory=$true)]
-        [string]
         $client_id,
 
         [Parameter(Mandatory=$true)]
@@ -118,10 +114,6 @@ param(
     Write-Output "The auth token is "$authToken
 
 
-
-    
-
-
     #$workflowUrl = "https://138.91.243.84:10011/api/users/v1/components/informatica/workflow/ignitep2p"
     $workflowUrl = "https://$ip/api/users/v1/components/informatica/workflow/ignitep2p"
 
@@ -139,7 +131,9 @@ param(
     }
 
     $workflowBodyJson = $workflowBody | ConvertTo-Json
-
+    
+    Start-Sleep -Seconds 90
+    
     $workres = Invoke-RestMethod -Uri $workflowUrl -Method Post -Headers $workflowHead -Body $workflowBodyJson -ContentType 'application/json'
 
     Write-Output $workres | ConvertTo-Json
