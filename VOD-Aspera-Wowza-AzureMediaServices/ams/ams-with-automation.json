@@ -110,7 +110,7 @@
         "MediaServices_Name": "[concat(parameters('MediaServices_Name'),uniqueString(resourceGroup().id))]",
         "automationUrl": "https://raw.githubusercontent.com/ashwinse/azuremedia/master/azure-mediaservices-automation.json",
         "automationAccountName": "azureMediaSrcAutoAcc",
-        "runbookUrl": "https://raw.githubusercontent.com/sysgain/VOD-Aspera-Wowza-AzureMediaServices/master/ams/MediaservicesRestapi1.ps1",
+        "runbookUrl": " https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/ams/MediaservicesRestapi1.ps1",
         "runbookName": "myrunbook"
     },
     "resources": [
