@@ -7,7 +7,6 @@
       "defaultValue": "westus",
       "allowedValues": [
         "westus",
-        "eastus2",
         "eastus",
         "centralus"
       ],
@@ -189,21 +188,13 @@
         "description": "ChefEnvironments unique public DNS prefix"
       }
     },
-    "baseUrll": {
-      "type": "string",
-      "metadata": {
-        "description": "The base URL for dependent deployment files",
-        "artifactsBaseUrl": ""
-      },
-      "defaultValue": "https://raw.githubusercontent.com/boobalana/azure-quickstart-templates/master/chef-server-compliance-delivery-devops"
-    },  
     "baseUrl": {
       "type": "string",
       "metadata": {
         "description": "The base URL for dependent deployment files",
         "artifactsBaseUrl": ""
       },
-      "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/chef-server-compliance-delivery-devops"
+      "defaultValue": "https://raw.githubusercontent.com/sysgain/azurequickstarts/ChefAutomate/ChefAutomate"
     }
   },
   "variables": {
@@ -259,7 +250,7 @@
       "program": "p2p",
       "project": "Chef"
     },
-    "chefServerScriptUrl": "https://raw.githubusercontent.com/boobalana/azure-quickstart-templates/master/chef-server-compliance-delivery-devops/scripts/chefserver.sh",
+    "chefServerScriptUrl": "[concat(parameters('baseUrl'),'/scripts/chefserver.sh')]",
     "chefprefix": "",
     "uniqueString": "[uniquestring(resourceGroup().id)]",
     "keyName": "validatorkey",
