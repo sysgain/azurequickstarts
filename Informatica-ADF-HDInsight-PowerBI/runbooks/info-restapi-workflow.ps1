@@ -119,8 +119,6 @@ param(
 
 
 
-    
-
 
     #$workflowUrl = "https://138.91.243.84:10011/api/users/v1/components/informatica/workflow/ignitep2p"
     $workflowUrl = "https://$ip/api/users/v1/components/informatica/workflow/ignitep2p"
@@ -137,18 +135,10 @@ param(
         storageAccountName = "$adfStorageAccName"
         storageAccountkey = "$adfStorageAccKey"
     }
-
+    
     $workflowBodyJson = $workflowBody | ConvertTo-Json
-
-    $workres = Invoke-RestMethod -Uri $workflowUrl -Method Post -Headers $workflowHead -Body $workflowBodyJson -ContentType 'application/json'
-
+    Start-Sleep -Seconds 90
+    $workres = Invoke-RestMethod -Uri $workflowUrl -Method Post -Headers $workflowHead -Body $workflowBodyJson -ContentType 'application/json' 
     Write-Output $workres | ConvertTo-Json
 
-
 }
-
-
-
-
-
-
