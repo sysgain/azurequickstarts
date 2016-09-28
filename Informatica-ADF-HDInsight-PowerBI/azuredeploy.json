@@ -97,18 +97,6 @@
                 "description": " Public IP dns prefix"
             }
         },
-        "azure_Rm_Username": {
-            "type": "string",
-            "metadata": {
-                "description": "Azure RM Username"
-            }
-        },
-        "azure_Rm_Password": {
-            "type": "securestring",
-            "metadata": {
-                "description": "Azure RM Password"
-            }
-        },
         "user_email": {
             "type": "string",
             "metadata": {
@@ -238,19 +226,21 @@
         "client_id": "xSwkg5OMQCT4PxrIz5HrFOuq0rmiBUAV",
         "publicIPdns": "[concat(parameters('publicIPdnsPrefix'),uniqueString(resourceGroup().id))]",
         "hivescript": "",
-        "sysgain_ms_email": "[concat('sys',uniqueString(resourceGroup().id),'@gmail.com')]",
+        "sysgain_ms_email": "[concat('syshyd',uniqueString(resourceGroup().id),'279@gmail.com')]",
         "sysgain_ms_password": "[uniqueString(resourceGroup().id)]",
         "automation_Location": "East US 2",
         "arguments": "[concat(parameters('informatica_user_name'),' ',parameters('informatica_user_password'))]",
-        "sqlDWServName": "sqlserv",
+        "sqlDWServName": "sqlser",
         "sqlDWDBName": "testdwdb",
+        "azure_Rm_Username":"ash@sysgaininc.onmicrosoft.com",
+        "azure_Rm_Password":"Sysgain@#",
         "automationAccountName": "createtbl",
         "accountName": "[concat(variables('automationAccountName'),uniqueString(resourceGroup().id))]",
         "credentialName": "aocred",
         "runbookName": "createtable",
         "dataFactName": "adf",
         "tableName": "bi9",
-        "vmName": "informatica",
+        "vmName": "informvm",
         "storageAccountName": "infosa",
         "adfstorageAccountName": "adfsa",
         "storageAccName": "[concat(variables('storageAccountName'),uniqueString(resourceGroup().id))]",
@@ -279,7 +269,7 @@
         "vnetAddressPrefix": "10.2.0.0/16",
         "subnet1Prefix": "10.2.0.0/24",
         "storageAccountType": "Standard_LRS",
-        "vmSize": "Standard_A2",
+        "vmSize": "Standard_F4s",
         "storageContainer": "vhds",
         "imagePublisher": "informatica-cloud",
         "imageOffer": "informatica-cloud",
@@ -303,7 +293,7 @@
         "clusterSize": 1,
         "timeToLive": "00:45:00",
         "frequency": "Hour",
-        "armBaseUrl": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/Informatica-ADF-HDInsight-PowerBI",
+        "armBaseUrl": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master",
         "interval": 1,
         "writeBatchSize": 0,
         "writeBatchTimeout": "00:00:00",
@@ -654,10 +644,10 @@
                         "value": "[variables('credential1Name')]"
                     },
                     "cred1Username": {
-                        "value": "[parameters('azure_Rm_Username')]"
+                        "value": "[variables('azure_Rm_Username')]"
                     },
                     "cred1Password": {
-                        "value": "[parameters('azure_Rm_Password')]"
+                        "value": "[variables('azure_Rm_Password')]"
                     },
                     "runbookName": {
                         "value": "[variables('credSetupRunbookName')]"
@@ -756,10 +746,10 @@
                         "value": "[variables('credential1Name')]"
                     },
                     "cred1Username": {
-                        "value": "[parameters('azure_Rm_Username')]"
+                        "value": "[variables('azure_Rm_Username')]"
                     },
                     "cred1Password": {
-                        "value": "[parameters('azure_Rm_Password')]"
+                        "value": "[variables('azure_Rm_Password')]"
                     },
                     "runbookName": {
                         "value": "[variables('wfrunbookName')]"
@@ -942,10 +932,10 @@
                         "value": "[variables('credential1Name')]"
                     },
                     "cred1Username": {
-                        "value": "[parameters('azure_Rm_Username')]"
+                        "value": "[variables('azure_Rm_Username')]"
                     },
                     "cred1Password": {
-                        "value": "[parameters('azure_Rm_Password')]"
+                        "value": "[variables('azure_Rm_Password')]"
                     },
                     "runbookName": {
                         "value": "[variables('ccrunbookName')]"
