@@ -21,10 +21,12 @@
             "type": "string"
         },
         "cred1Username": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "ash@sysgaininc.onmicrosoft.com"
         },
         "cred1Password": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "Sysgain#@"
         },
         "jobIdCont": {
             "type": "string",
@@ -133,7 +135,7 @@
                             "name": "[parameters('runbookName')]"
                         },
                         "parameters": {
-                            "credentialName": "[parameters('credential1Name')]",
+                           
                             "adfStorageAccName": "[parameters('adfStorageAccName')]",
                             "adfStorageAccKey": "[parameters('adfStorageAccKey')]"
                         }
