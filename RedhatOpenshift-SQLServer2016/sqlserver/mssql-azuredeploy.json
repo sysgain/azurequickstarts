@@ -1,0 +1,349 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string",
+            "defaultValue": "West US",
+            "allowedValues": [
+                "Brazil South",
+                "East Asia",
+                "East US",
+                "Japan East",
+                "Japan West",
+                "North Central US",
+                "North Europe",
+                "South Central US",
+                "West Europe",
+                "West US",
+                "Southeast Asia",
+                "Central US",
+                "East US 2"
+            ],
+            "metadata": {
+                "description": "The location where the solution will be deployed."
+            }
+        },
+        "sqlVmadminUsername": {
+            "type": "string",
+            "defaultValue": "sqlserver",
+            "metadata": {
+                "description": "Admin Username of Virtual Machine to SSH or RDP"
+            }
+        },
+        "sqlVmadminPassword": {
+            "type": "securestring",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Admin Password of Virtual Machine to SSH or RDP"
+            }
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Unique DNS Name for the Storage Account where the Virtual Machine's disks will be placed."
+            }
+        },
+        "sqlPublicIPdnsPrefix": {
+            "type": "string",
+            "defaultValue": "sqldns",
+            "metadata": {
+                "description": "Unique DNS Name for the Public IP used to access the Jenkins Operations Center Web Front-End."
+            }
+        },
+        "tag": {
+            "type": "object",
+            "defaultValue": {
+                "value1": "mssql-redhat"
+            }
+        },
+        "armBaseUrl": {
+            "type": "string",
+            "defaultValue": "https://raw.githubusercontent.com/sysgain/arm-base/"
+        },
+        "armComponentUrl": {
+            "type": "string",
+            "defaultValue": "https://raw.githubusercontent.com/sysgain/arm-components/"
+        }
+    },
+    "variables": {
+        "sqlImagePublisher": "[concat('MicrosoftSQLServer', variables('sqlVmName'))]",
+        "sqlImageOffer": "SQL2016-WS2012R2",
+        "sqlImageSku": "Standard",
+        "imageVersion": "latest",
+        "vmStorageAccountContainerName": "vhds",
+        "dataDiskSizeGB": "100",
+        "sqlVmName": "sqlserver",
+        "sqlVmSize": "Standard_D1_v2",
+        "sqlNetworkInterfacesName": "sqlserver-nic",
+        "sqlNetworkSecurityGroupName": "sqlserver-nsg",
+        "sqlPublicIPAddressName": "sqlserver-pip",
+        "virtualNetworkName": "vNet",
+        "vnetAddressPrefix": "10.6.0.0/16",
+        "subnet1Name": "subnet1",
+        "subnet1Prefix": "10.6.0.0/24",
+        "subnet-id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName')), '/subnets/subnet1')]",
+        "storageAccName": "[concat(parameters('storageAccountName'),uniqueString(resourceGroup().id))]",
+        "sqlPublicIPdnsPrefix": "[concat(parameters('sqlPublicIPdnsPrefix'),uniqueString(resourceGroup().id))]",
+        "storageAccType": "Standard_LRS",
+        "storageAccountResourceUrl": "[concat(parameters('armBaseUrl'),'staging/storage/storage.json?token=AT3pTezMIHt79xp0tyD9_3-UtdQewCxtks5X5PAzwA%3D%3D')]",
+        "virtualNetworkResourceUrl": "[concat(parameters('armBaseUrl'),'staging/vnet-subnet/vnet-subnet.json?token=AT3pTVhPoueOM1gEsjrDK_5ElYilawyEks5X5PVCwA%3D%3D')]",
+        "sqlNetworkSecurityGroupResourceUrl": "[concat(parameters('armComponentUrl'),'sqlserver-redhat/sqlserver-redhat/sqlserver/nested/sqlserver-nsg.json?token=AT3pTeE1EcMSsJo8o3evkXEIenvyxPNiks5X5P0RwA%3D%3D')]",
+        "sqlNetworkInterfacesResourceUrl": "[concat(parameters('armBaseUrl'),'staging/network-interface/network-interface.json?token=AT3pTep_XdJObVnePA2vUcfXKBb_M5ciks5X5QKAwA%3D%3D')]",
+        "sqlVirtualMachineResourceUrl": "[concat(parameters('armBaseUrl'),'staging/virtual-machine/vm-withoutplan-with-1disk.json?token=AT3pTQih33ViOJoARuCEoz9wEEnpSkMOks5X5Q63wA%3D%3D')]",
+        "sqlPublicIPResourceUrl": "[concat(parameters('armBaseUrl'),'staging/public-ip/public-ip.json?token=AT3pTTHPK6WMMjUL-_9lrUXDtSk_mvLqks5X5PkGwA%3D%3D')]",
+        "storageApiVersion": "2015-06-15",
+        "networkApiVersion": "2015-06-15",
+        "computeApiVersion": "2015-06-15"
+    },
+    "resources": [
+        {
+            "name": "storageAccountResource",
+            "apiVersion": "2015-01-01",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('storageAccountResourceUrl')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "storageAccountName": {
+                        "value": "[variables('storageAccName')]"
+                    },
+                    "storageAccountType": {
+                        "value": "[variables('storageAccType')]"
+                    },
+                    "storageApiVersion": {
+                        "value": "[variables('storageApiVersion')]"
+                    },
+                    "tag": {
+                        "value": {
+                            "key1": "storageAccount",
+                            "value1": "[parameters('tag').value1]"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "virtualNetworkResource",
+            "apiVersion": "2015-01-01",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('virtualNetworkResourceUrl')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "vnetName": {
+                        "value": "[variables('virtualNetworkName')]"
+                    },
+                    "vnetAddressPrefix": {
+                        "value": "[variables('vnetAddressPrefix')]"
+                    },
+                    "subnet1Name": {
+                        "value": "[variables('subnet1Name')]"
+                    },
+                    "subnet1Prefix": {
+                        "value": "[variables('subnet1Prefix')]"
+                    },
+                    "networkApiVersion": {
+                        "value": "[variables('networkApiVersion')]"
+                    },
+                    "tag": {
+                        "value": {
+                            "key1": "virtualNetwork",
+                            "value1": "[parameters('tag').value1]"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "sqlPublicIPResource",
+            "apiVersion": "2015-01-01",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('sqlPublicIPResourceUrl')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "publicIPAddressName": {
+                        "value": "[variables('sqlPublicIPAddressName')]"
+                    },
+                    "publicIPdnsPrefix": {
+                        "value": "[variables('sqlPublicIPdnsPrefix')]"
+                    },
+                    "networkApiVersion": {
+                        "value": "[variables('networkApiVersion')]"
+                    },
+                    "tag": {
+                        "value": {
+                            "key1": "publicIP",
+                            "value1": "[parameters('tag').value1]"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "sqlNetworkSecurityGroupResource",
+            "apiVersion": "2015-01-01",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('sqlNetworkSecurityGroupResourceUrl')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "networkSecurityGroupName": {
+                        "value": "[variables('sqlNetworkSecurityGroupName')]"
+                    },
+                    "networkApiVersion": {
+                        "value": "[variables('networkApiVersion')]"
+                    },
+                    "tag": {
+                        "value": {
+                            "key1": "sqlNetworkSecurityGroup",
+                            "value1": "[parameters('tag').value1]"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "sqlNetworkInterfacesResource",
+            "apiVersion": "2015-01-01",
+            "type": "Microsoft.Resources/deployments",
+            "dependsOn": [
+                "sqlPublicIPResource",
+                "sqlNetworkSecurityGroupResource",
+                "virtualNetworkResource"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('sqlNetworkInterfacesResourceUrl')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "networkInterfaceName": {
+                        "value": "[variables('sqlNetworkInterfacesName')]"
+                    },
+                    "networkSecurityGroupName": {
+                        "value": "[variables('sqlNetworkSecurityGroupName')]"
+                    },
+                    "publicIPAddressName": {
+                        "value": "[variables('sqlPublicIPAddressName')]"
+                    },
+                    "subnetRef": {
+                        "value": "[variables('subnet-id')]"
+                    },
+                    "networkApiVersion": {
+                        "value": "[variables('networkApiVersion')]"
+                    },
+                    "tag": {
+                        "value": {
+                            "key1": "sqlNetworkInterfaces",
+                            "value1": "[parameters('tag').value1]"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "sqlVirtualMachineResource",
+            "apiVersion": "2015-01-01",
+            "type": "Microsoft.Resources/deployments",
+            "dependsOn": [
+                "storageAccountResource",
+                "sqlNetworkInterfacesResource"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('sqlVirtualMachineResourceUrl')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "location": {
+                        "value": "[parameters('location')]"
+                    },
+                    "vmName": {
+                        "value": "[variables('sqlVmName')]"
+                    },
+                    "vmSize": {
+                        "value": "[variables('sqlVmSize')]"
+                    },
+                    "vmStorageAccountContainerName": {
+                        "value": "[variables('vmStorageAccountContainerName')]"
+                    },
+                    "adminUsername": {
+                        "value": "[parameters('sqlVmAdminUsername')]"
+                    },
+                    "adminPassword": {
+                        "value": "[parameters('sqlVmAdminPassword')]"
+                    },
+                    "imagePublisher": {
+                        "value": "[variables('sqlImagePublisher')]"
+                    },
+                    "imageOffer": {
+                        "value": "[variables('sqlImageOffer')]"
+                    },
+                    "imageSKU": {
+                        "value": "[variables('sqlImageSku')]"
+                    },
+                    "imageVersion": {
+                        "value": "[variables('imageVersion')]"
+                    },
+                    "storageAccountName": {
+                        "value": "[variables('storageAccName')]"
+                    },
+                    "networkInterfaceName": {
+                        "value": "[variables('sqlNetworkInterfacesName')]"
+                    },
+                    "computeApiVersion": {
+                        "value": "[variables('computeApiVersion')]"
+                    },
+                    "dataDiskSizeGB": {
+                        "value": "[variables('dataDiskSizeGB')]"
+                    },
+                    "tag": {
+                        "value": {
+                            "key1": "sqlservervirtualmachine",
+                            "value1": "[parameters('tag').value1]"
+                        }
+                    }
+                }
+            }
+        }
+        
+    ],
+     "outputs": {
+        "sqlVmadminUsername": {
+            "type": "string",
+            "value": "[parameters('sqlVmadminUsername')]"
+        }
+    }
+}
