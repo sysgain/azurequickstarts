@@ -43,12 +43,6 @@
         "publicIPdnsPrefix": {
             "value": "infodns"
         },
-        "azure_Rm_Username": {
-            "value": "uday@sysgaininc.com"
-        },
-        "azure_Rm_Password": {
-            "value": "Sysgain@#"
-        },
         "user_email": {
             "value": "trevor12@gmail.com"
         },
