@@ -17,13 +17,16 @@
             "type": "string"
         },
         "credential1Name": {
+            "defaultValue": "Azure_RM_Account_Credentials",
             "type": "string"
         },
         "cred1Username": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "ash@sysgaininc.onmicrosoft.com"
         },
         "cred1Password": {
-            "type": "securestring"
+            "type": "string",
+            "defaultValue": "Sysgain#@"
         },
         "jobIdSignup": {
             "type": "string",
