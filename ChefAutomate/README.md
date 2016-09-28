@@ -1,8 +1,8 @@
 # Chef - Cloud Devops Solution Template
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fchef-server-compliance-delivery-devops%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsysgain%2Fazurequickstarts%2FChefAutomate%2FChefAutomate%2Fazuredeploy.json" target="_blank">
 <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fchef-server-compliance-delivery-devops%2Fazuredeploy.json" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fsysgain%2Fazurequickstarts%2FChefAutomate%2FChefAutomate%2Fazuredeploy.json" target="_blank">
 <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 ## Solution Template Overview
@@ -14,6 +14,9 @@ Customers benefit greatly from solution templates because of the ease with which
 Please [contact us](azuremarketplace@sysgain.com) if you need further info or support on this solution.
 ##Licenses & Costs
 In its current state, solution templates come with licenses built-in – there may be a BYOL option included in the future. The solution template will be deployed in the Customer’s Azure subscription, and the Customer will incur Azure usage charges associated with running the solution stack. There is a 30 day free version of chef delivery included with this stack.
+
+Here we have provided trial license along with repo. its advised to use new trial license or your license while deploying Automate [link to download Automate Key](https://learn.chef.io/automate/install/install-chef-automate/) (Click on 'Get a license' Button).
+
 ##Target Audience
 The target audience for these solution templates are IT professionals who need to stand-up and/or deploy infrastructure stacks.
 ## Prerequisites
