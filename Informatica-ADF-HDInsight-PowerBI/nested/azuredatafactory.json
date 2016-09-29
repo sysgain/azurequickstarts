@@ -169,7 +169,7 @@
                     "properties": {
                         "type": "AzureStorage",
                         "typeProperties": {
-                            "connectionString": "[concat('DefaultEndpointsProtocol=https;AccountName=hivestorage45',';AccountKey=e45XZ3VvhL8i6qtswOHqOXH/MaCmXgtP2bMl5S/rV6D8ADP39LwmoeWQIt4uX6WjZ3zz7vtbUPnZnwEBNwA2Tg==')]"
+                            "connectionString": "[concat('DefaultEndpointsProtocol=https;AccountName=hivestorage45',';AccountKey=HxaJ9xKgO3/1PS5bRO6fc+rTdS+KXWhGsxLubXweQaw75qbFu3AWHwuR6IggpKZeXtspV+RYfffDtFBO5pMRXA==')]"
                         }
                     }
                 },
