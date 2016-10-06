@@ -85,7 +85,7 @@
       }
     },
     "azurePortalPassword": {
-      "type": "string",
+      "type": "securestring",
       "metadata": {
         "description": "Valid Password to login into your Azure Portal"
       }
