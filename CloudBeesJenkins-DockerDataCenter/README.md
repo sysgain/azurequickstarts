@@ -60,16 +60,14 @@ You can follwo the instructions in [this downloadable guide](https://github.com/
 1. Deploy the PostAzureDeploy.json onto the same resource group.
 2. Since we are not using certifcates from a Third party CA, we need to establish self trusting certificates on all the nine nodes (3 upc nodes, 3 upc controller nodes, 3 dtr nodes).
 
-```shell
-export DOMAIN_NAME=DOMAIN_NAME
-openssl s_client -connect $DOMAIN_NAME:443 -showcerts </dev/null 2>/dev/null | \openssl x509 -outform PEM | sudo tee /usr/local/share/ca-certificates/$DOMAIN_NAME.crt
-sudo update-ca-certificates
-sudo service docker restart
-```
-where `DOMAIN_NAME` is the DTR domain name.
-
+   ```shell
+   export DOMAIN_NAME=DOMAIN_NAME
+   openssl s_client -connect $DOMAIN_NAME:443 -showcerts </dev/null 2>/dev/null | \openssl x509 -outform PEM | sudo tee /usr/local/share/ca-certificates/$DOMAIN_NAME.crt
+   sudo update-ca-certificates
+   sudo service docker restart
+   ```
+   where `DOMAIN_NAME` is the DTR domain name.
 3. Follow steps 2 through 7 from [this manual](https://github.com/sysgain/azurequickstarts/blob/master/CloudBeesJenkins-DockerDataCenter/Lab-Manual.pdf) 
-
 4. Integrate UCP with DTR by following [this manual](https://docker.github.io/ucp/configuration/dtr-integration/) omitting  step 5. 
 
 ##Support
