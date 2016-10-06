@@ -97,11 +97,17 @@
         "MediaService_StorageAccounts_Keys": {
             "type": "string",
             "defaultValue": "NBwzPQb3UAw23FT4aVzHKn2ywYetjQDkYSg2ekgZwx57T4wcJAQh/EkOD63rUQynW4eu1FgZTRiq2w8Ok3/mzA=="
-        }
+        },
+        "baseUri": {
+			"type": "string",
+			"defaultValue":"https://raw.githubusercontent.com/sysgain/azurequickstarts/vcherukuri-patch-3/VOD-Aspera-Wowza-AzureMediaServices/"
+	}
     },
     "variables": {
         "variable1Name": "variable1",
-        "variable2Name": "variable2"
+        "variable2Name": "variable2",
+        "runbookUrl": "[concat(parameters('baseUri'), 'ams/MediaservicesRestapi1.ps1')]",
+        
     },
     "resources": [
         {
