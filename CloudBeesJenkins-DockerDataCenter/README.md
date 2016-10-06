@@ -67,7 +67,9 @@ sudo update-ca-certificates
 sudo service docker restart
 ```
 where `DOMAIN_NAME` is the DTR domain name.
+
 3. Follow steps 2 through 7 from [this manual](https://github.com/sysgain/azurequickstarts/blob/master/CloudBeesJenkins-DockerDataCenter/Lab-Manual.pdf) 
+
 4. Integrate UCP with DTR by following [this manual](https://docker.github.io/ucp/configuration/dtr-integration/) omitting  step 5. 
 
 ##Support
