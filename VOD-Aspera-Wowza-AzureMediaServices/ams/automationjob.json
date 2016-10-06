@@ -4,7 +4,7 @@
     "parameters": {
         "automationAccountName": {
             "type": "string",
-            "defaultValue": "auto",
+            "defaultValue": "auto"
         },
         "sku": {
             "type": "string",
