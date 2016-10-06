@@ -41,7 +41,7 @@
 		"publicIpAddressName": "[concat(parameters('deploymentName'),'wow', 'publicIP')]",
 		"virtualMachineExtensionName": "[concat(parameters('deploymentName'), 'wowzascript')]",
 		"publicIPdnsPrefix": "[concat(parameters('deploymentName'), 'wowzadns')]",
-		"scriptFilePath": "[concat(parameters('baseUri'), '/wowza/configwowza.sh')]",
+		"scriptFilePath": "[concat(parameters('baseUri'), 'wowza/configwowza.sh')]",
 		"executeCmd": "[concat('sh configwowza.sh', ' ',parameters('wowzaUsername'), ' ',parameters('storageAccountName'),' ',parameters('storageAccountKey'), ' ',parameters('containerName'))]",
 		"vnetId": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
 		"subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
