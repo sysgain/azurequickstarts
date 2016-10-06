@@ -189,7 +189,7 @@
 		"webSessionPassword": "[uniqueString(parameters('adminSSHKey'))]",
 		"installSize": "Small",
 		"vmSize": "Standard_D2_v2",
-		"baseUri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/",
+		"baseUri": "[parameters('baseUri')]",
 		"apigeeTemplateLink": "[concat(variables('baseUri'),'Apigee/',parameters('apigeeEdge'),'.json')]",
 		"pcfTemplateLink": "[concat(variables('baseUri'),'pcf/pcfdeploy.json')]",
 		"managementPublicIPDNSName": "[concat(parameters('apigeeDeploymentName'), uniqueString(resourceGroup().id, deployment().name), '-management')]",
