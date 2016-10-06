@@ -52,10 +52,7 @@
                 "description": "Automation Service Location"
             }
         },
-        "runbookUrl": {
-            "defaultValue": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/ams/MediaservicesRestapi1.ps1",
-            "type": "string"
-        },
+     
         "tag": {
             "type": "object",
             "defaultValue": {
@@ -106,7 +103,7 @@
     "variables": {
         "variable1Name": "variable1",
         "variable2Name": "variable2",
-        "runbookUrl": "[concat(parameters('baseUri'), 'ams/MediaservicesRestapi1.ps1')]",
+        "runbookUrl": "[concat(parameters('baseUri'), 'ams/MediaservicesRestapi1.ps1')]"
         
     },
     "resources": [
@@ -141,7 +138,7 @@
                         "logVerbose": "false",
                         "description": null,
                         "publishContentLink": {
-                            "uri": "[parameters('runbookUrl')]",
+                            "uri": "[variables('runbookUrl')]",
                             "version": "1.0.0.0"
                         }
                     }
