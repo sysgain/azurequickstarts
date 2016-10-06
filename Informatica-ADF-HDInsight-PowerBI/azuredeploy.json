@@ -320,7 +320,7 @@
     "automationScriptUri": "[concat(variables('armBaseUrl'),'/scripts/createTable.ps1')]",
     "runbookDescription": "Create a Database Table in User provided Datawarehouse",
     "sku": "Basic",
-    "sqldwlocation": "eastus",
+    "sqldwlocation": "westus",
     "collation": "SQL_Latin1_General_CP1_CI_AS",
     "maxSizeBytes": "10995116277760",
     "credSetupRunbookName": "inforunbook1",
