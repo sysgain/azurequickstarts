@@ -22,7 +22,11 @@
 			],
 			"metadata": {
 				"description": "Deployment location of where Apigee will be installed"
-			}
+			},
+		"baseUri": {
+			"type": "string",
+			"defaultValue":"https://raw.githubusercontent.com/sysgain/azurequickstarts/vcherukuri-patch-1/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/"
+	}
 		},
 
 		"adminUsername": {
@@ -185,9 +189,9 @@
 		"webSessionPassword": "[uniqueString(parameters('adminSSHKey'))]",
 		"installSize": "Small",
 		"vmSize": "Standard_D2_v2",
-		"baseUri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/Apigee/",
-		"apigeeTemplateLink": "[concat(variables('baseUri'),parameters('apigeeEdge'),'.json')]",
-		"pcfTemplateLink": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/Pivotalp2pv2/azuredeploy.json",
+		"baseUri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/",
+		"apigeeTemplateLink": "[concat(variables('baseUri'),'Apigee/',parameters('apigeeEdge'),'.json')]",
+		"pcfTemplateLink": "[concat(variables('baseUri'),'pcf/pcfdeploy.json')]",
 		"managementPublicIPDNSName": "[concat(parameters('apigeeDeploymentName'), uniqueString(resourceGroup().id, deployment().name), '-management')]",
 		"managementUI": "[concat('http://', variables('managementPublicIPDNSName'), '.', tolower(replace(variables('location'),' ','')), '.cloudapp.azure.com', ':9000')]",
 		"managementDNSName": "[concat('https://', variables('managementPublicIPDNSName'), '.', tolower(replace(variables('location'),' ','')), '.cloudapp.azure.com')]",
