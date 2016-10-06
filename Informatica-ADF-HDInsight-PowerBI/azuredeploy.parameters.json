@@ -34,56 +34,65 @@
         "value1": "Informatica"
       }
     },
-    "adminUsername_informatica_vm": {
+    "azurePortalUsername": {
+      "value": "abc@microsoft.com"
+    },
+    "azurePortalPassword": {
+      "value": "GEN-PASSWORD"
+    },
+    "adminUsernameInformaticaVm": {
       "value": "vmuser"
     },
-    "adminPassword_informatica_vm": {
+    "adminPasswordInformaticaVm": {
       "value": "GEN-PASSWORD"
     },
     "publicIPdnsPrefix": {
       "value": "infodns"
     },
-    "user_email": {
+    "userEmail": {
       "value": "abc@xyz.com"
     },
-    "informatica_user_name": {
+    "informaticaUsername": {
       "value": "abc@xyz.com"
     },
-    "informatica_user_password": {
+    "informaticaUserPassword": {
       "value": "GEN-PASSWORD"
     },
-    "user_firstname": {
+    "userFirstname": {
       "value": "Trevor"
     },
-    "user_lastname": {
+    "userLastname": {
       "value": "Sebastian"
     },
-    "user_title": {
+    "userTitle": {
       "value": "Mr"
     },
-    "user_phone": {
+    "userPhone": {
       "value": "9000840469"
     },
-    "org_name": {
+    "orgName": {
       "value": "Testorg"
     },
-    "org_address": {
+    "orgAddress": {
       "value": "MainSt"
     },
-    "org_city": {
+    "orgCity": {
       "value": "Seattle"
     },
-    "org_state": {
+    "orgState": {
       "value": "WA"
     },
-    "org_zipcode": {
+    "orgZipcode": {
       "value": "98102"
     },
-    "org_country": {
+    "orgCountry": {
       "value": "US"
     },
-    "org_employees": {
-      "defaultValue": "5001_"
+    "orgEmployees": {
+      "value": "5001_"
+    },
+    "baseUrl": {
+      "value": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/Informatica-ADF-HDInsight-PowerBI"
     }
   }
 }
