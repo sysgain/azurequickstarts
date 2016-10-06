@@ -14,7 +14,7 @@
         },
 	"baseUri": {    
 		"type": "string",
-		"defaultValue": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices"
+		"defaultValue": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/"
         }
     },
     "variables": {
@@ -30,7 +30,7 @@
         "publicIpAddressName":"[concat(parameters('deploymentName'), 'publicIP')]",
         "vmExtensionName":"aspscript",
         "publicIPdnsPrefix":"[concat(parameters('deploymentName'), 'asperadns')]",
-        "scriptFilePath":"[concat(parameters('baseUri'), '/aspera/configasp.sh')]", 
+        "scriptFilePath":"[concat(parameters('baseUri'), 'aspera/configasp.sh')]", 
         "executeCmd": "[concat('sh configasp.sh', ' ',parameters('asperaUsername'))]",
         "vnetId": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
