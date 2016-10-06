@@ -36,7 +36,7 @@
         },
         "serviceLevelObjective": {
             "type": "string",
-            "defaultValue": "DW100",
+            "defaultValue": "DW100"
         },
         "startIpAddress": {
             "type": "string",
