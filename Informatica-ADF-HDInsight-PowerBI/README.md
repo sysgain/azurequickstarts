@@ -53,8 +53,10 @@ As a part of deployment, the template launches and integrates the following:
 3. Deploys a custom script extension on Informatica CSA VM which connects Informatica Cloud Security Agent to Informatica Cloud.
 4. Deploys SQL Data Warehouse with 100DWUs performance tier with collation “SQL_Latin1_General_CP1_CI_AS” and maximum size of 10 Terabytes.
 5. Deploys Automation Job with an automation account which creates a table in the SQL Data Warehouse
-6. Deploys Data Factory with three data sets, Four Linked Services( three Storage linked services and one HDInsight on demand service) and one Pipeline which contains two activities one for running Hive script and one for Copy the data from Azure Blob to Azure Data Warehouse.
-7. Deploys VM with Power BI for data analysis.
+6. Deploys Automation Job that creates cointainer in the destination storage account  (this data is used for processing)
+7.  Deploys  Automation Job which uses a third party service to access the Informatica account that is created in previous steps to create connections, Mappings etc. 
+7. Deploys Data Factory with three data sets, Four Linked Services( three Storage linked services and one HDInsight on demand service) and one Pipeline which contains two activities one for running Hive script and one for Copy the data from Azure Blob to Azure Data Warehouse.
+
  
 ## Deployment Steps
 You can click the "deploy to Azure" button at the beginning of this document or follow the instructions for command line deployment using the scripts in the root of this repo.
