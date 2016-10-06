@@ -45,7 +45,11 @@
 			}
 
 
-		}
+		},
+		"baseUri": {
+			"type": "string",
+			"defaultValue":"https://raw.githubusercontent.com/sysgain/azurequickstarts/vcherukuri-patch-3/VOD-Aspera-Wowza-AzureMediaServices/"
+	}
 	},
 	"variables": {
 		"uniqueString": "[uniquestring(resourceGroup().id)]",
@@ -59,7 +63,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/ams/ams.json",
+					"uri": "[concat(parameters('baseUri'), 'ams/ams.json')]",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -82,7 +86,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/ams/automationjob.json",
+					"uri": "[concat(parameters('baseUri'), 'ams/automationjob.json')]",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -116,6 +120,9 @@
 					},
 					"MediaService_StorageAccounts_Keys": {
 						"value": "[reference('ams').outputs.MediaService_StorageAccounts_Keys.value]"
+					},
+					"baseUri": {
+						"value": "[parameters('baseUri')]"
 					}
 
 
@@ -134,7 +141,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/desktop/desktop.json",
+					"uri":"[concat(parameters('baseUri'), 'desktop/desktop.json')]",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -173,7 +180,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/aspera/aspera.json",
+					"uri": "[concat(parameters('baseUri'), 'aspera/aspera.json')]",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -185,6 +192,9 @@
 					},
 					"asperaAdminPassword": {
 						"value": "[parameters('asperaAdminPassword')]"
+					},
+					"baseUri": {
+						"value": "[parameters('baseUri')]"
 					}
 
 				}
@@ -199,7 +209,7 @@
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/wowza/wowza.json",
+					"uri": "[concat(parameters('baseUri'), 'wowza/wowza.json')]",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -221,6 +231,9 @@
 					},
 					"wowzaAdminPassword": {
 						"value": "[parameters('wowzaadminPassword')]"
+					},
+					"baseUri": {
+						"value": "[parameters('baseUri')]"
 					}
 
 				}
