@@ -33,7 +33,7 @@
     "sqlDWAdminPassword": {
       "type": "securestring",
       "metadata": {
-        "description": "SQL Datawarehouse Admin password ex: Sysgain@123"
+        "description": "SQL Datawarehouse Admin password"
       }
     },
     "jobId": {
