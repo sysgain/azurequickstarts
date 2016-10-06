@@ -56,6 +56,7 @@ As a part of deployment, the template launches and integrates the following:
 6. Deploys Automation Job that creates cointainer in the destination storage account  (this data is used for processing)
 7.  Deploys  Automation Job which uses a third party service to access the Informatica account that is created in previous steps to create connections, Mappings etc. 
 7. Deploys Data Factory with three data sets, Four Linked Services( three Storage linked services and one HDInsight on demand service) and one Pipeline which contains two activities one for running Hive script and one for Copy the data from Azure Blob to Azure Data Warehouse.
+8. Data can be visualized  on PowerBI using the [report](https://hivestorage45.blob.core.windows.net/powerbireport/reports/MachineData_09262016_latest.pbix) 
 
  
 ## Deployment Steps
