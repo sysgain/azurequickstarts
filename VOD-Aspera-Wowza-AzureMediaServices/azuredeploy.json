@@ -120,6 +120,9 @@
 					},
 					"MediaService_StorageAccounts_Keys": {
 						"value": "[reference('ams').outputs.MediaService_StorageAccounts_Keys.value]"
+					},
+					"baseUri": {
+						"value": "[parameters('baseUri')]"
 					}
 
 
@@ -189,6 +192,9 @@
 					},
 					"asperaAdminPassword": {
 						"value": "[parameters('asperaAdminPassword')]"
+					},
+					"baseUri": {
+						"value": "[parameters('baseUri')]"
 					}
 
 				}
@@ -225,6 +231,9 @@
 					},
 					"wowzaAdminPassword": {
 						"value": "[parameters('wowzaadminPassword')]"
+					},
+					"baseUri": {
+						"value": "[parameters('baseUri')]"
 					}
 
 				}
