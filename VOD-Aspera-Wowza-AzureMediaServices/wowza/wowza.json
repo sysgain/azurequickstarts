@@ -21,7 +21,11 @@
 		},
 		"wowzaAdminPassword": {
 			"type": "securestring"
-		}
+		},
+		"baseUri": {
+			"type": "string",
+			"defaultValue":"https://raw.githubusercontent.com/sysgain/azurequickstarts/vcherukuri-patch-3/VOD-Aspera-Wowza-AzureMediaServices/"
+	}
 	},
 	"variables": {
 		"virtualMachineName": "[concat(parameters('deploymentName'), 'wowza')]",
@@ -37,7 +41,7 @@
 		"publicIpAddressName": "[concat(parameters('deploymentName'),'wow', 'publicIP')]",
 		"virtualMachineExtensionName": "[concat(parameters('deploymentName'), 'wowzascript')]",
 		"publicIPdnsPrefix": "[concat(parameters('deploymentName'), 'wowzadns')]",
-		"scriptFilePath": "https://raw.githubusercontent.com/sysgain/azurequickstarts/master/VOD-Aspera-Wowza-AzureMediaServices/wowza/configwowza.sh",
+		"scriptFilePath": "[concat(parameters('baseUri'), '/wowza/configwowza.sh')]",
 		"executeCmd": "[concat('sh configwowza.sh', ' ',parameters('wowzaUsername'), ' ',parameters('storageAccountName'),' ',parameters('storageAccountKey'), ' ',parameters('containerName'))]",
 		"vnetId": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
 		"subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
@@ -310,4 +314,5 @@
 
 		}
 	}
+	
 }
