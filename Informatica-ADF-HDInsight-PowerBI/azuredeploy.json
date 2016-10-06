@@ -78,13 +78,25 @@
         "value1": "informatica"
       }
     },
-    "adminUsername_informatica_vm": {
+    "azurePortalUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "Valid Username to login into your Azure Portal"
+      }
+    },
+    "azurePortalPassword": {
+      "type": "string",
+      "metadata": {
+        "description": "Valid Password to login into your Azure Portal"
+      }
+    },
+    "adminUsernameInformaticaVm": {
       "type": "string",
       "metadata": {
         "description": "Username to login into informatica vm"
       }
     },
-    "adminPassword_informatica_vm": {
+    "adminPasswordInformaticaVm": {
       "type": "securestring",
       "metadata": {
         "description": "Password to login into informatica vm"
@@ -230,17 +242,17 @@
     }
   },
   "variables": {
-    "client_id": "xSwkg5OMQCT4PxrIz5HrFOuq0rmiBUAV",
+    "clientID": "xSwkg5OMQCT4PxrIz5HrFOuq0rmiBUAV",
     "publicIPdns": "[concat(parameters('publicIPdnsPrefix'),uniqueString(resourceGroup().id))]",
     "hivescript": "",
-    "sysgain_ms_email": "[concat('syshyd',uniqueString(resourceGroup().id),'279@gmail.com')]",
-    "sysgain_ms_password": "[uniqueString(resourceGroup().id)]",
-    "automation_Location": "East US 2",
+    "sysgainMsEmail": "[concat('syshyd',uniqueString(resourceGroup().id),'279@gmail.com')]",
+    "sysgainMsPassword": "[uniqueString(resourceGroup().id)]",
+    "automationLocation": "East US 2",
     "arguments": "[concat(parameters('informaticaUsername'),' ',parameters('informaticaUserPassword'))]",
     "sqlDWServName": "sqlser",
     "sqlDWDBName": "testdwdb",
-    "azure_Rm_Username": "ash@sysgaininc.onmicrosoft.com",
-    "azure_Rm_Password": "Sysgain@#",
+    "azureRmUsername": "[parameters('azurePortalUsername')]",
+    "azureRmPassword": "[parameters('azurePortalPassword')]",
     "automationAccountName": "createtbl",
     "accountName": "[concat(variables('automationAccountName'),uniqueString(resourceGroup().id))]",
     "credentialName": "aocred",
@@ -286,11 +298,11 @@
     "storageApiVersion": "2015-06-15",
     "networkApiVersion": "2015-06-15",
     "computeApiVersion": "2015-06-15",
-    "sql-api-version": "2014-04-01",
-    "sqldb-api-version": "2015-05-01-preview",
-    "sqlfirewallrules-api-version": "2014-04-01",
+    "sqlApiVersion": "2014-04-01",
+    "sqldbApiVersion": "2015-05-01-preview",
+    "sqlfirewallrulesApiVersion": "2014-04-01",
     "version": "3.2",
-    "sql-version": "12.0",
+    "sqlVersion": "12.0",
     "fileUris": "[concat(variables('armBaseUrl'),'/scripts/ICExtentionScript.ps1')]",
     "apiVersion": "2015-10-01",
     "blobInputDataset": "AzureBlobInput",
@@ -584,10 +596,10 @@
             "value": "[variables('imageSKU')]"
           },
           "adminUsername": {
-            "value": "[parameters('adminUsername_informatica_vm')]"
+            "value": "[parameters('adminUsernameInformaticaVm')]"
           },
           "adminPassword": {
-            "value": "[parameters('adminPassword_informatica_vm')]"
+            "value": "[parameters('adminPasswordInformaticaVm')]"
           },
           "networkInterfaceName": {
             "value": "[variables('networkInterfaceName')]"
@@ -651,16 +663,16 @@
             "value": "[variables('credential1Name')]"
           },
           "cred1Username": {
-            "value": "[variables('azure_Rm_Username')]"
+            "value": "[variables('azureRmUsername')]"
           },
           "cred1Password": {
-            "value": "[variables('azure_Rm_Password')]"
+            "value": "[variables('azureRmPassword')]"
           },
           "runbookName": {
             "value": "[variables('credSetupRunbookName')]"
           },
           "location": {
-            "value": "[variables('automation_Location')]"
+            "value": "[variables('automationLocation')]"
           },
           "runbookUrl": {
             "value": "[variables('credsrunbookUrl')]"
@@ -672,10 +684,10 @@
             "value": "[variables('ip')]"
           },
           "sysgain_ms_email": {
-            "value": "[variables('sysgain_ms_email')]"
+            "value": "[variables('sysgainMsEmail')]"
           },
           "sysgain_ms_password": {
-            "value": "[variables('sysgain_ms_password')]"
+            "value": "[variables('sysgainMsPassword')]"
           },
           "user_email": {
             "value": "[parameters('userEmail')]"
@@ -720,7 +732,7 @@
             "value": "[parameters('orgEmployees')]"
           },
           "client_id": {
-            "value": "[variables('client_id')]"
+            "value": "[variables('clientID')]"
           }
         }
       }
@@ -753,16 +765,16 @@
             "value": "[variables('credential1Name')]"
           },
           "cred1Username": {
-            "value": "[variables('azure_Rm_Username')]"
+            "value": "[variables('azureRmUsername')]"
           },
           "cred1Password": {
-            "value": "[variables('azure_Rm_Password')]"
+            "value": "[variables('azureRmPassword')]"
           },
           "runbookName": {
             "value": "[variables('wfrunbookName')]"
           },
           "location": {
-            "value": "[variables('automation_Location')]"
+            "value": "[variables('automationLocation')]"
           },
           "runbookUrl": {
             "value": "[variables('wfrunbookUrl')]"
@@ -774,10 +786,10 @@
             "value": "[variables('ip')]"
           },
           "sysgain_ms_email": {
-            "value": "[variables('sysgain_ms_email')]"
+            "value": "[variables('sysgainMsEmail')]"
           },
           "sysgain_ms_password": {
-            "value": "[variables('sysgain_ms_password')]"
+            "value": "[variables('sysgainMsPassword')]"
           },
           "informatica_user_name": {
             "value": "[parameters('informaticaUsername')]"
@@ -789,7 +801,7 @@
             "value": "[variables('vmName')]"
           },
           "client_id": {
-            "value": "[variables('client_id')]"
+            "value": "[variables('clientID')]"
           },
           "adfStorageAccName": {
             "value": "[variables('adfstorageAccName')]"
@@ -836,13 +848,13 @@
             "value": "[variables('endIpAddress')]"
           },
           "sql-api-version": {
-            "value": "[variables('sql-api-version')]"
+            "value": "[variables('sqlApiVersion')]"
           },
           "sqldb-api-version": {
-            "value": "[variables('sqldb-api-version')]"
+            "value": "[variables('sqldbApiVersion')]"
           },
           "sqlfirewallrules-api-version": {
-            "value": "[variables('sqlfirewallrules-api-version')]"
+            "value": "[variables('sqlfirewallrulesApiVersion')]"
           },
           "collation": {
             "value": "[variables('collation')]"
@@ -851,7 +863,7 @@
             "value": "[variables('maxSizeBytes')]"
           },
           "version": {
-            "value": "[variables('sql-version')]"
+            "value": "[variables('sqlVersion')]"
           }
         }
       }
@@ -895,7 +907,7 @@
             "value": "[variables('runbookName')]"
           },
           "location": {
-            "value": "[variables('automation_Location')]"
+            "value": "[variables('automationLocation')]"
           },
           "scriptUri": {
             "value": "[variables('automationScriptUri')]"
@@ -939,16 +951,16 @@
             "value": "[variables('credential1Name')]"
           },
           "cred1Username": {
-            "value": "[variables('azure_Rm_Username')]"
+            "value": "[variables('azureRmUsername')]"
           },
           "cred1Password": {
-            "value": "[variables('azure_Rm_Password')]"
+            "value": "[variables('azureRmPassword')]"
           },
           "runbookName": {
             "value": "[variables('ccrunbookName')]"
           },
           "location": {
-            "value": "[variables('automation_Location')]"
+            "value": "[variables('automationLocation')]"
           },
           "scriptUri": {
             "value": "[variables('containerPsUri')]"
