@@ -27,7 +27,7 @@ The target audience for these solution templates are IT professionals who need t
  
 ##Solution Summary
 The goal of this solution stack is to provide a continous integration experience by creating docker images of any code change and deploy the solutions as containers. This is achieved using multiple ISV products and integrating them in an automated way.
-![](images/azure-trend-splunk-chef.png)
+![](images/Screenshot 2016-10-06 13.29.30.png)
 
 The core component of this stack is Docker Datacenter, which is an integrated solution including open source and commercial software, the integrations between them, full Docker API support, validated configurations and commercial support for your Docker Datacenter environment. A pluggable architecture allows for flexibility in compute, networking and storage providers used in your Containers-as-a-Service (CaaS) infrastructure without disrupting the application code. Enterprises can leverage existing technology investments with Docker Datacenter. The open APIs allow Docker Datacenter CaaS to easily integrate into your existing systems like LDAP/AD, monitoring, logging and more.
 
