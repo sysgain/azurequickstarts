@@ -24,10 +24,11 @@ The target audience for these solution templates are IT professionals who need t
 * Azure Subscription - if you want to test drive individual ISV products, please check out the [Azure Marketplace Test Drive Program](https://azure.microsoft.com/en-us/marketplace/test-drives/)
 * Azure user account with Contributor/Admin Role
 * Sufficient Quota - At least 22 Cores (with default VM Sizes)
+* Docker Data Center license.( use the url to your license instead while deploying )
  
 ##Solution Summary
 The goal of this solution stack is to provide a continous integration experience by creating docker images of any code change and deploy the solutions as containers. This is achieved using multiple ISV products and integrating them in an automated way.
-![](images/azure-trend-splunk-chef.png)
+![](images/Screenshot 2016-10-06 13.29.30.png)
 
 The core component of this stack is Docker Datacenter, which is an integrated solution including open source and commercial software, the integrations between them, full Docker API support, validated configurations and commercial support for your Docker Datacenter environment. A pluggable architecture allows for flexibility in compute, networking and storage providers used in your Containers-as-a-Service (CaaS) infrastructure without disrupting the application code. Enterprises can leverage existing technology investments with Docker Datacenter. The open APIs allow Docker Datacenter CaaS to easily integrate into your existing systems like LDAP/AD, monitoring, logging and more.
 
@@ -57,15 +58,18 @@ You can follwo the instructions in [this downloadable guide](https://github.com/
 
 ##Post Deployment steps
 
-Since we are not using certifcates from a Third party CA, we need to establish self trusting certificates on all the nine nodes (3 upc nodes, 3 upc controller nodes, 3 dtr nodes).
+1. Deploy the PostAzureDeploy.json onto the same resource group.
+2. Since we are not using certifcates from a Third party CA, we need to establish self trusting certificates on all the nine nodes (3 upc nodes, 3 upc controller nodes, 3 dtr nodes).
 
-```shell
-export DOMAIN_NAME=dtrnodednsq7g5ypoz2cbpo.westus.cloudapp.azure.com
-openssl s_client -connect $DOMAIN_NAME:443 -showcerts </dev/null 2>/dev/null | \openssl x509 -outform PEM | sudo tee /usr/local/share/ca-certificates/$DOMAIN_NAME.crt
-sudo update-ca-certificates
-sudo service docker restart
-```
-where `DOMAIN_NAME` is the DTR domain name.
+   ```shell
+   export DOMAIN_NAME=DOMAIN_NAME
+   openssl s_client -connect $DOMAIN_NAME:443 -showcerts </dev/null 2>/dev/null | \openssl x509 -outform PEM | sudo tee /usr/local/share/ca-certificates/$DOMAIN_NAME.crt
+   sudo update-ca-certificates
+   sudo service docker restart
+   ```
+   where `DOMAIN_NAME` is the DTR domain name.
+3. Set up Jenkins Job by following steps 2 through 7 from [this manual](https://github.com/sysgain/azurequickstarts/blob/master/CloudBeesJenkins-DockerDataCenter/Lab-Manual.pdf) 
+4. Integrate UCP with DTR by following [this manual](https://docker.github.io/ucp/configuration/dtr-integration/) omitting  step 5. 
 
 ##Support
 For any support-related issues or questions, please contact azuremarketplace@sysgain.com for assistance.
