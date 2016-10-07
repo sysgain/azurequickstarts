@@ -139,6 +139,6 @@ Please refer to parameter descriptions if you need more information on what need
 
 The deployment takes about 5 Hours. 
 
-To work with the Hands on Lab click [here](http://pcf-ignite.pcfazure.com/Labs/)
+To work with Pivotal Cloud Foundry Hands on Lab click [here](http://pcf-ignite.pcfazure.com/Labs/)
 
 
