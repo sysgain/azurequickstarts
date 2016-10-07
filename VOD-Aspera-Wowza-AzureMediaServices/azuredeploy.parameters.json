@@ -3,43 +3,32 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
     "deploymentName": {
-			"type": "string",
-	    		"value": "wowzastack"
+			"value": "wowzastack"
 		},
 		"desktopUsername": {
-			"type": "string",
 			"value": "desktopuser"
 		},
 		"desktopAdminPassword": {
-			"type": "securestring",
 			"value": "GEN-PASSWORD"
 		},
 		"asperaUsername": {
-			"type": "string",
 			"value": "asperauser"
 		},
 		"asperaAdminPassword": {
-			"type": "securestring",
 			"value": "GEN-PASSWORD"
 		},
 		"wowzaUsername": {
-			"type": "string",
 			"value": "wowzauser"
 		},
 		"wowzaAdminPassword": {
-			"type": "securestring",
 			"value": "GEN-PASSWORD"
 		},
 		"automationAccountName": {
-			"type": "string",
 			"value": "auto"
 			
 		},
 		"jobId": {
-
-			"type": "string",
-
-			"defaultValue": "24b18f62-aa2c-4528-ac10-1e3602eb4053"
+			"value": "24b18f62-aa2c-4528-ac10-1e3602eb4053"
 
 			
 		}
