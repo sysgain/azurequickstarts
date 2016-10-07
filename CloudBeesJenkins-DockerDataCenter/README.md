@@ -24,6 +24,7 @@ The target audience for these solution templates are IT professionals who need t
 * Azure Subscription - if you want to test drive individual ISV products, please check out the [Azure Marketplace Test Drive Program](https://azure.microsoft.com/en-us/marketplace/test-drives/)
 * Azure user account with Contributor/Admin Role
 * Sufficient Quota - At least 22 Cores (with default VM Sizes)
+* Docker Data Center license.( use the url to your license instead while deploying )
  
 ##Solution Summary
 The goal of this solution stack is to provide a continous integration experience by creating docker images of any code change and deploy the solutions as containers. This is achieved using multiple ISV products and integrating them in an automated way.
@@ -67,7 +68,7 @@ You can follwo the instructions in [this downloadable guide](https://github.com/
    sudo service docker restart
    ```
    where `DOMAIN_NAME` is the DTR domain name.
-3. Follow steps 2 through 7 from [this manual](https://github.com/sysgain/azurequickstarts/blob/master/CloudBeesJenkins-DockerDataCenter/Lab-Manual.pdf) 
+3. Set up Jenkins Job by following steps 2 through 7 from [this manual](https://github.com/sysgain/azurequickstarts/blob/master/CloudBeesJenkins-DockerDataCenter/Lab-Manual.pdf) 
 4. Integrate UCP with DTR by following [this manual](https://docker.github.io/ucp/configuration/dtr-integration/) omitting  step 5. 
 
 ##Support
