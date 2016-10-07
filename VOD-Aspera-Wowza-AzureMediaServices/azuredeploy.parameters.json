@@ -3,48 +3,45 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
     "deploymentName": {
-			"type": "string"
+			"type": "string",
+	    		"value": "wowzastack"
 		},
 		"desktopUsername": {
-			"type": "string"
+			"type": "string",
+			"value": "desktopuser"
 		},
 		"desktopAdminPassword": {
-			"type": "securestring"
+			"type": "securestring",
+			"value": "GEN-PASSWORD"
 		},
 		"asperaUsername": {
-			"type": "string"
+			"type": "string",
+			"value": "asperauser"
 		},
 		"asperaAdminPassword": {
-			"type": "securestring"
+			"type": "securestring",
+			"value": "GEN-PASSWORD"
 		},
 		"wowzaUsername": {
-			"type": "string"
+			"type": "string",
+			"value": "wowzauser"
 		},
 		"wowzaAdminPassword": {
 			"type": "securestring"
+			"value": "GEN-PASSWORD"
 		},
 		"automationAccountName": {
 			"type": "string",
-			"defaultValue": "auto",
-			"metadata": {
-
-				"description": "The account name must not be empty, and must not exceed 50 characters in length.  The account name must start with a letter or number.  The account name can contain letters, numbers, and dashes.  The final character must be a letter or a number. "
-
-			}
+			"value": "auto"
+			
 		},
 		"jobId": {
 
 			"type": "string",
 
-			"defaultValue": "24b18f62-aa2c-4528-ac10-1e3602eb4053",
+			"value": "GEN-UNIQUE"
 
-			"metadata": {
-
-				"description": "Generate a Job ID (GUID) from https://www.guidgenerator.com/online-guid-generator.aspx "
-
-			}
-
-
+			
 		}
 	}
   }
