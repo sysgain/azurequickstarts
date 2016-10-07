@@ -53,6 +53,16 @@ https://network.pivotal.io/products/p-spring-cloud-services/releases/1735/eula
 
 
 # Solution Summary
+The Solution stack deploys Pivotal Cloud Foundry, Concourse CI, Apigee Edge Gateway, Apigee Service Broker and Azure Meta Service Broker
+![Solution Summary](https://github.com/sysgain/azurequickstarts/blob/vcherukuri-patch-1/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/Images/Solution%20Summary.png?raw=true)
+
+Apigee and Pivotal partnered to provide comprehensive API management capabilities that expedite the scalable delivery of apps on the powerful Pivotal Cloud Foundry platform. Apigee Edge is available for rapid deployment as a partner service in the Pivotal Network. Developers use Apigee Edge as a Pivotal Cloud Foundry partner service. 
+Pivotal Cloud Foundry’s service broker API is used to create the Apigee service broker, which enables the provisioning and configuration of Edge instances bound to client apps. When Edge is configured, the route service intelligently routes API traffic to and from Edge, thereby leveraging Apigee's broad range of features related to traffic management, mediation, policy enforcement, and analytics. Developers in a customers's ecosystem consume and test their APIs using Apigee's developer portal.
+
+The Apigee service broker supports Apigee Edge, including Trial, SMB, Startup, and Enterprise.
+
+![Pivotal Cloud Foundry Integration with Apigee Edge Gateway](https://github.com/sysgain/azurequickstarts/blob/vcherukuri-patch-1/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/Images/Solution%20Integration.png?raw=true)
+
 
 
 ##Product Architecture
