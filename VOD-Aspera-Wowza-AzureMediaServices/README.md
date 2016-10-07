@@ -28,7 +28,7 @@ Sufficient Quota - At least 10 Cores with DS1 VM Sizes
 Aspera Entitlement Key and Customer ID
 
 ## Solution Summary
-![Solution Summary](https://github.com/sysgain/azurequickstarts/blob/vcherukuri-patch-3/VOD-Aspera-Wowza-AzureMediaServices/wowza.png?raw=true)
+![Solution Summary](https://github.com/sysgain/azurequickstarts/blob/vcherukuri-patch-3/VOD-Aspera-Wowza-AzureMediaServices/Images/wowza.png?raw=true)
 
 The Video On-Demand with Wowza, Aspera, & Azure Media Services Azure Partner Quickstart Template is a Video on demand (VOD) Solution Built on Microsoft Azure delivers video on-demand streaming from your location to a global audience using Aspera Faspex Technology, Azure Media Services and Wowza Streaming Server. 
 
