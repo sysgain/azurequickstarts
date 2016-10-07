@@ -137,5 +137,8 @@ SQL Server
 You can click the “deploy to Azure” button at the beginning of this document or follow the instructions for command line deployment using the scripts in the root of this repo.
 Please refer to parameter descriptions if you need more information on what needs to be provided as an input.
 
-The deployment takes about 3 Hours. 
+The deployment takes about 5 Hours. 
+
+To work with the Hands on Lab click [here](http://pcf-ignite.pcfazure.com/Labs/)
+
 
