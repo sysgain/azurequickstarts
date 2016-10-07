@@ -95,6 +95,6 @@ SQL Server
 ##Deployment Steps
 You can click the “deploy to Azure” button at the beginning of this document or follow the instructions for command line deployment using the scripts in the root of this repo.
 Please refer to parameter descriptions if you need more information on what needs to be provided as an input.
-The deployment takes about 3 Hours.
-Once it is deployed refer to the user guide to take you to step by step to use the Solution
-![User Guide]()
+
+The deployment takes about 3 Hours. 
+
