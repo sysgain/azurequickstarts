@@ -15,7 +15,7 @@ Please [contact us](azuremarketplace@sysgain.com) if you need further info or su
 ##Licenses & Costs
 In its current state, solution templates come with licenses built-in – there may be a BYOL option included in the future. The solution template will be deployed in the Customer’s Azure subscription, and the Customer will incur Azure usage charges associated with running the solution stack. There is a 30 day free version of chef delivery included with this stack.
 
-Here we have provided trial license along with repo. its advised to use new trial license or your license while deploying Automate [link to download Automate Key](https://learn.chef.io/automate/install/install-chef-automate/) (Click on 'Get a license' Button).
+Here we have provided trial license along with repo. it is advised to use new trial license or your license while deploying Automate [link to download Automate Key](https://learn.chef.io/automate/install/install-chef-automate/) (Click on 'Get a license' Button).
 
 ##Target Audience
 The target audience for these solution templates are IT professionals who need to stand-up and/or deploy infrastructure stacks.
@@ -81,6 +81,9 @@ Input Parameters:
 Resources created at the end of deployment:
 
 ![](images/chefp2p-resources-created.png)
+
+### Chef Automate License
+Login to Provision server and place Chef Automate License on the Provision server under adminuser home directory as delivery.license ( file can be transfered to destination host using any file transfer tools like winscp or filezilla) here we have provided trial license along with repo. it is best advised to use new trial license or your own license while deploying Automate [link to download Automate Key](https://learn.chef.io/automate/install/install-chef-automate/) (Click on 'Get a license' Button).
 
 3. The final step is to log in to chef Provisioning Server using ssh client and run " sh install.sh" command. once this command run is completed, the delivery cluster is also setup. You can then run "sh delivery_credentials.sh" to retrieve the credentials for delivery node and delivery account on chef sever.
 * Login to Provisioining node and run install.sh
