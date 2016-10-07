@@ -26,7 +26,10 @@
 	},
 		"baseUri": {
 			"type": "string",
-			"defaultValue":"https://raw.githubusercontent.com/sysgain/azurequickstarts/vcherukuri-patch-1/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/"
+			"defaultValue":"https://raw.githubusercontent.com/sysgain/azurequickstarts/vcherukuri-patch-1/PivtoalCloudFoundry-Concourse-Apigee-AzureMetaService/pivotal-P2P/",
+			"metadata": {
+				"description": "Deployment location of where Apigee will be installed"
+			}
 	
 		},
 
@@ -143,7 +146,10 @@
 		},
 
 		"apigeeAdminPassword": {
-			"type": "securestring"
+			"type": "securestring",
+			"metadata": {
+				"description": "Password for super admin of Apigee deployment"
+			}
 		},
 		"apigeeAdminEmail": {
 			"type": "string",
