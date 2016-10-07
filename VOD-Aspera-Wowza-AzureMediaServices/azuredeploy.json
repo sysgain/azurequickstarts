@@ -3,25 +3,46 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"deploymentName": {
-			"type": "string"
+			"type": "string",
+			"metadata": {
+				"description": "Deployment Name of the Stack"
+			}
 		},
 		"desktopUsername": {
-			"type": "string"
+			"type": "string",
+			"metadata": {
+				"description": "Desktop Administrator Name"
+			}
 		},
 		"desktopAdminPassword": {
-			"type": "securestring"
+			"type": "securestring",
+			"metadata": {
+				"description": "Desktop Administrator Password"
+			}
 		},
 		"asperaUsername": {
-			"type": "string"
+			"type": "string",
+			"metadata": {
+				"description": "Aspera Server Administrator Name"
+			}
 		},
 		"asperaAdminPassword": {
-			"type": "securestring"
+			"type": "securestring",
+			"metadata": {
+				"description": "Aspera Server Administrator Password"
+			}
 		},
 		"wowzaUsername": {
-			"type": "string"
+			"type": "string",
+			"metadata": {
+				"description": "Wowza Streaming Server Administrator Name"
+			}
 		},
 		"wowzaAdminPassword": {
-			"type": "securestring"
+			"type": "securestring",
+			"metadata": {
+				"description": "Wowza Streaming Server Administrator Password"
+			}
 		},
 		"automationAccountName": {
 			"type": "string",
