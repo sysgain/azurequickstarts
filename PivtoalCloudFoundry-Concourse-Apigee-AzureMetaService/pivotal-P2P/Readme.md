@@ -24,10 +24,15 @@ Administrators & Operators - Administrators and Operators for those who require 
 ##Prerequisites
 Azure user account with Contributor/Admin Role
 
-Sufficiently high quota limits (Recommended: 100 cores) on your Azure account. Installing Pivotal Cloud Foundry® requires more than the default 20 cores. *Please see this link for instructions on requesting a core quota increase. *Install either the Azure CLI or Azure PowerShell on your machine, using the instructions here. Create an Azure Service Principal (TENANT-ID, CLIENT-ID, CLIENT-SECRET):
-Use the Instructions here to generate Azure Service Principal file
+Sufficiently high quota limits (Recommended: 100 cores) on your Azure account. Installing Pivotal Cloud Foundry® requires more than the default 20 cores. 
+Please see this [link](https://blogs.msdn.microsoft.com/girishp/2015/09/20/increasing-core-quota-limits-in-azure/)  for instructions on requesting a core quota increase.
 
-Pivotal Network Account: If you do not already have an account, create one. You will need the API token located in your profile. Navigate to your name in the top right and select Edit Profile. The API token is located at the bottom of the page.
+Install either the Azure CLI or Azure PowerShell on your machine, using the instructions [here](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/).
+
+Create an Azure Service Principal (TENANT-ID, CLIENT-ID, CLIENT-SECRET):
+Use the Instructions [here](https://github.com/danhigham/azure-sp-tool) to generate Azure Service Principal file
+
+Pivotal Network Account: If you do not already have an account, [create one] (https://network.pivotal.io). You will need the API token located in your profile. Navigate to your name in the top right and select Edit Profile. The API token is located at the bottom of the page.
 
 
 
