@@ -27,7 +27,7 @@
 			"value": "wowzauser"
 		},
 		"wowzaAdminPassword": {
-			"type": "securestring"
+			"type": "securestring",
 			"value": "GEN-PASSWORD"
 		},
 		"automationAccountName": {
