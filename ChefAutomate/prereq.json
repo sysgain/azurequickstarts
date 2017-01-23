@@ -234,6 +234,10 @@
     "ComplianceVMusername": {
       "type": "string",
       "value": "[parameters('vm-adminName')]"
+    },
+    "ComplianceVMpassword": {
+      "type": "string",
+      "value": "[parameters('vm-adminPassword')]"
     }
   }
 }
