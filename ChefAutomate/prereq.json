@@ -1,0 +1,106 @@
+{
+    "azuredeploy": {
+        "dependson": "chefdelivery",
+        "vmAdminPasswordOrchServer": {
+            "type":"password",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"vmAdminPasswordOrchServer"
+            }
+        },
+        "publicIPDomainNameLabelOrchServer": {
+            "type":"uniquestring",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"publicIPDomainNameLabelOrchServer"
+            }
+        },
+        "vmAdminPasswordChefServer": {
+            "type":"password",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"vmAdminPasswordChefServer"
+            }
+        },
+        "publicIPDomainNameLabelChefServer": {
+            "type":"uniquestring",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"publicIPDomainNameLabelChefServer"
+            }
+        },
+        "chefUserPassword": {
+            "type":"password",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"chefUserPassword"
+            }
+        },
+        "adminPasswordChefWorkstation": {
+            "type":"password",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"adminPasswordChefWorkstation"
+            }
+        },
+        "adminPasswordChefEnvironments": {
+            "type":"password",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"adminPasswordChefEnvironments"
+            }
+        },
+        "prereq-complianceServerUri": {
+            "type":"map",
+            "mapping":{
+                "chefdelivery:ComplianceServerUri":"prereq-complianceServerUri"
+            }
+        },
+        "prereq-complianceServerAdmin": {
+            "type":"map",
+            "mapping":{
+                "chefdelivery:ComplianceVMusername":"prereq-complianceServerAdmin"
+            }
+        },
+        "prereq-componentServerPassword": {
+            "type":"map",
+            "mapping":{
+                "chefdelivery:ComplianceVMpassword":"prereq-componentServerPassword"
+            }
+        }
+    },
+    "chefdelivery": {
+        "vm-adminPassword": {
+            "type": "password",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"vm-adminName"
+            }
+        },
+        "dnsLabelPrefix": {
+            "type": "uniquestring",
+            "properies":{
+ 
+            },
+            "mapping":{
+                "password":"dnsLabelPrefix"
+            }
+        }
+    }
+}
