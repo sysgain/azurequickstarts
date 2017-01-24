@@ -90,7 +90,7 @@
  
             },
             "mapping":{
-                "password":"vm-adminName"
+                "vm-adminPassword":"vm-adminName"
             }
         },
         "dnsLabelPrefix": {
@@ -99,7 +99,7 @@
  
             },
             "mapping":{
-                "password":"dnsLabelPrefix"
+                "dnsLabelPrefix":"dnsLabelPrefix"
             }
         }
     }
