@@ -85,7 +85,7 @@
     },
     "chefdelivery": {
         "vm-adminPassword": {
-            "type": "password",
+            "type": "Password",
             "properies":{
  
             },
@@ -94,7 +94,7 @@
             }
         },
         "dnsLabelPrefix": {
-            "type": "uniquestring",
+            "type": "Uniquestring",
             "properies":{
  
             },
