@@ -89,15 +89,15 @@ The Deployment automation is divided into 3 steps
 3. The final step is to log in to chef Provisioning Server using ssh client and run " sh install.sh" command. once this command run is completed, the delivery cluster is also setup. You can then run "sh delivery_credentials.sh" to retrieve the credentials for delivery node and delivery account on chef sever.
  * Login to Provisioining node and run install.sh
 
-![](images/chefdelivery-run-installsh.png)
+ ![](images/chefdelivery-run-installsh.png)
 
  * You should see output similar to the following at the end of the command run. This should take 5-10 mins.
 
-![](images/chefdelivery-install-output.png)
+ ![](images/chefdelivery-install-output.png)
 
  * Run delivery_crendentials script to retrieve the credentials for Chef Server - delivery user and delivery UI.
 
-![](images/chefdelivery-crendentials.png)
+ ![](images/chefdelivery-crendentials.png)
  
 ##Usage
 #### Connect
