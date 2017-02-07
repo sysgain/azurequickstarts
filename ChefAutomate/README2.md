@@ -66,11 +66,11 @@ The third subnet has all the nodes that are needed for chef delivery setup. A pr
 All the environments along with a chef workstation are hosted in the fourth subnet.
 
 ## Deployment Steps
-You can click the "deploy to Azure" button at the beginning of this document.
 ***Please refer to parameter descriptions if you need more information on what needs to be provided as an input.***
 The deployment takes about 1-1.5 hours.
 The Deployment automation is divided into 3 steps
-1. The first automation template(prereq.json) deploys the VNET and required Subnets and storage accounts. It also deploys an instance of chef compliance from Azure Marketplace image. Once this template is deployed, the user needs to login to Chef Compliance web interface by providing the FQDN prefix, accept EULA and create an admin account. Please note down the user-id and password as this needs to be provided as an input to the next deployment.
+
+1. To deploy the Chef Automate stack user has to first deploy prereq.json, which deploys the VNET and required Subnets and storage accounts. It also deploys an instance of chef compliance from Azure Marketplace image. Once this template is deployed, the user needs to login to Chef Compliance web interface by providing the FQDN prefix, accept EULA and create an admin account. Please note down the user-id and password as this needs to be provided as an input to the next deployment.
 
 ![](images/chefcompliance-credentialsreview.png)
 
