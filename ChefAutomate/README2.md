@@ -76,33 +76,34 @@ The Deployment automation is divided into 3 steps
 
 
 (For security purposes the Chef Compliance setup wizard has a one hour timeout. If you try to create the users after this timeout, the setup page does not work. In this case, please follow the troubleshooting section [here](https://docs.chef.io/install_compliance.html).
-2. The second deployment(azuredeploy.json) automates rest of the infrastructure provisioning configuration and installation of all the nodes .At the end of this deployment, all nodes as per the deployment diagram are created.
 
-*Please note that it is important to provide the same user id and password while registering for Chef Compliance as an input to this template; otherwise the deployment will fail.*****
+2. Next deploy azuredeploy.json, which automates rest of the infrastructure provisioning configuration and installation of all the nodes .At the end of this deployment, all nodes as per the deployment diagram are created.
 
-Input Parameters:
+ *Please note that it is important to provide the same user id and password while registering for Chef Compliance as an input to this template; otherwise the deployment will fail.*****
 
-![Input parameters](images/azuredeploy2-input%20parameters.png)
+ Input Parameters:
 
-Resources created at the end of deployment:
+ ![Input parameters](images/azuredeploy2-input%20parameters.png)
 
-![](images/chefp2p-resources-created.png)
+ Resources created at the end of deployment:
 
-### Chef Automate License
-Login to Provision server and place Chef Automate License on the Provision server under adminuser home directory as delivery.license ( file can be transfered to destination host using any file transfer tools like winscp or filezilla) here we have provided trial license along with repo. it is best advised to use new trial license or your own license while deploying Automate [link to download Automate Key](https://learn.chef.io/automate/install/install-chef-automate/) (Click on 'Get a license' Button).
+ ![](images/chefp2p-resources-created.png)
+
+ ### Chef Automate License
+ Login to Provision server and place Chef Automate License on the Provision server under adminuser home directory as delivery.license ( file can be transfered to destination host using any file transfer tools like winscp or filezilla) here we have provided trial license along with repo. it is best advised to use new trial license or your own license while deploying Automate [link to download Automate Key](https://learn.chef.io/automate/install/install-chef-automate/) (Click on 'Get a license' Button).
 
 3. The final step is to log in to chef Provisioning Server using ssh client and run " sh install.sh" command. once this command run is completed, the delivery cluster is also setup. You can then run "sh delivery_credentials.sh" to retrieve the credentials for delivery node and delivery account on chef sever.
 * Login to Provisioining node and run install.sh
 
-![](images/chefdelivery-run-installsh.png)
+ ![](images/chefdelivery-run-installsh.png)
 
 * You should see output similar to the following at the end of the command run. This should take 5-10 mins.
 
-![](images/chefdelivery-install-output.png)
+ ![](images/chefdelivery-install-output.png)
 
 * Run delivery_crendentials script to retrieve the credentials for Chef Server - delivery user and delivery UI.
 
-![](images/chefdelivery-crendentials.png)
+ ![](images/chefdelivery-crendentials.png)
 
 ##Post Deployment steps
 Run all the listed commands to make Chef Automate fully functional
