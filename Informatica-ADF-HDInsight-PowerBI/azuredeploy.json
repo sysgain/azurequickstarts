@@ -568,7 +568,7 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "location": {
+          "location2": {
             "value": "[parameters('location')]"
           },
           "computeApiVersion": {
