@@ -120,7 +120,7 @@
         "[parameters('tag').key1]": "[parameters('tag').value1]"
       },
 
-       "plan2": {
+       "plan": {
          "name": "[parameters('imageSKU')]",
          "product": "[parameters('imageOffer')]",
         "publisher": "[parameters('imagePublisher')]"
